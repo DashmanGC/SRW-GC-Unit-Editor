@@ -545,20 +545,17 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="checkProp05">
           <Properties>
-            <Property name="text" type="java.lang.String" value="???"/>
-            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Lv 20"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="checkProp06">
           <Properties>
-            <Property name="text" type="java.lang.String" value="???"/>
-            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Lv 25"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="checkProp07">
           <Properties>
-            <Property name="text" type="java.lang.String" value="???"/>
-            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Lv 30"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="checkProp08">

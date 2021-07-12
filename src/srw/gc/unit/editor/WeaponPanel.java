@@ -333,14 +333,11 @@ public class WeaponPanel extends javax.swing.JPanel {
 
         checkProp04.setText("Lv15");
 
-        checkProp05.setText("???");
-        checkProp05.setEnabled(false);
+        checkProp05.setText("Lv 20");
 
-        checkProp06.setText("???");
-        checkProp06.setEnabled(false);
+        checkProp06.setText("Lv 25");
 
-        checkProp07.setText("???");
-        checkProp07.setEnabled(false);
+        checkProp07.setText("Lv 30");
 
         checkProp08.setText("Growth 1");
         checkProp08.addActionListener(new java.awt.event.ActionListener() {
@@ -806,9 +803,6 @@ public class WeaponPanel extends javax.swing.JPanel {
 	fieldCombo.setEditable(safety);
 	checkType3.setEnabled(safety);
 	checkType4.setEnabled(safety);
-	checkProp05.setEnabled(safety);
-	checkProp06.setEnabled(safety);
-	checkProp07.setEnabled(safety);
 	checkProp16.setEnabled(safety);
 	fieldByte01.setEditable(safety);
 	fieldByte10.setEditable(safety);
@@ -1387,15 +1381,15 @@ public class WeaponPanel extends javax.swing.JPanel {
         if( getProp(4) )
             b[1] |= 0x08;
         
-        // ??? ---X ----
+        // Lv20 ---X ----
         if( getProp(5) )
             b[1] |= 0x10;
         
-        // ??? --X- ----
+        // Lv25 --X- ----
         if( getProp(6) )
             b[1] |= 0x20;
         
-        // ??? -X-- ----
+        // Lv30 -X-- ----
         if( getProp(7) )
             b[1] |= 0x40;
         
@@ -1456,18 +1450,12 @@ public class WeaponPanel extends javax.swing.JPanel {
                 break;
             case 5:
                 checkProp05.setSelected(active);
-                //if (active)
-                //    System.out.println("WeaponPanel: Unusual Property 05 used");
                 break;
             case 6:
                 checkProp06.setSelected(active);
-                //if (active)
-                //    System.out.println("WeaponPanel: Unusual Property 06 used");
                 break;
             case 7:
                 checkProp07.setSelected(active);
-                //if (active)
-                //    System.out.println("WeaponPanel: Unusual Property 07 used");
                 break;
             case 8:
                 checkProp08.setSelected(active);   
