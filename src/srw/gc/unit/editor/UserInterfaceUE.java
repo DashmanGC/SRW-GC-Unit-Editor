@@ -112,9 +112,9 @@ public class UserInterfaceUE extends javax.swing.JFrame {
             + "\tMin range\tMax range\tHit bonus\tCrit bonus\tAmmo\tEN cost\tWill req.\tMounted on\t*Combo ID"
             + "\tTerrain - Space\tTerrain - Water\tTerrain - Land\tTerrain - Air\tType - Infight\tType - Gunfight"
             + "\t*Type - Unknown #1\t*Type - Unknown #2\tType - Post-move\tType - Beam\tType - Missile\tType - MAP"
-            + "\tProp. - NT Lv1\tProp. - NT Lv5\tProp. - Lv10\tProp. - Lv15\t*Prop. - Unknown #1\t*Prop. - Unknown #2"
-            + "\t*Prop. - Unknown #3\tProp. - Growth 1 (S)\tProp. - Growth 2 (M)\tProp. - Growth 3 (L)\tProp. - Growth M (MAP)"
-            + "\tProp. - Combo\tProp. - Event lock\tProp. - Can't hit size S\tProp. - Hits buildings\t*Prop. - Unknown #4"
+            + "\tProp. - NT Lv1\tProp. - NT Lv5\tProp. - Lv10\tProp. - Lv15\tProp. - Lv20\tProp. - Lv25"
+            + "\tProp. - Lv30\tProp. - Growth 1 (S)\tProp. - Growth 2 (M)\tProp. - Growth 3 (L)\tProp. - Growth M (MAP)"
+            + "\tProp. - Combo\tProp. - Event lock\tProp. - Can't hit size S\tProp. - Hits buildings\t*Prop. - Unknown"
             + "\t*Byte 01\t*Byte 10\t*Byte 21\t*Byte 23\t*Byte 24\n";
     
     String csv_header_characters = "Character ID\tCharacter Name\tRobot series\tAlly / Enemy\tEnemy AI (?)\tPersonality"
@@ -1698,14 +1698,15 @@ public class UserInterfaceUE extends javax.swing.JFrame {
                             .addComponent(labelSell)
                             .addComponent(fieldSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(tabUnitsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelEssential)
-                            .addComponent(fieldEssential, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelCapture)
-                            .addComponent(comboCapture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(tabUnitsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabUnitsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(labelRepair)
-                                .addComponent(fieldRepair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(fieldRepair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tabUnitsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelEssential)
+                                .addComponent(fieldEssential, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelCapture)
+                                .addComponent(comboCapture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(tabUnitsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelSize)
