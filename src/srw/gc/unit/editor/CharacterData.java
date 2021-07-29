@@ -71,7 +71,7 @@ public class CharacterData {
     
     short skillAces;
     
-    byte enemyAI;       // still not sure about this one
+    byte EXPmodifier;       // multiplies EXP gained by fighting this character
     
     byte parts;         // number of equippable skill parts
     
@@ -161,7 +161,7 @@ public class CharacterData {
 
         skillAces = 0;
 
-        enemyAI = 0;
+        EXPmodifier = 0;
 
         parts = 0;
 
@@ -208,7 +208,7 @@ public class CharacterData {
             byte[] sk, byte nl1, byte nl2, byte nl3, byte nl4, byte nl5, byte nl6, byte nl7, byte nl8, byte nl9,
             byte pl1, byte pl2, byte pl3, byte pl4, byte pl5, byte pl6, byte pl7, byte pl8, byte pl9,
             byte sl1, byte sl2, byte sl3, byte sl4, byte cl1, byte cl2, byte cl3, byte cl4, byte[] pf,
-            short sa, byte ai, byte par, short s, byte s1lv, byte s1id, short s1co,
+            short sa, byte xp, byte par, short s, byte s1lv, byte s1id, short s1co,
             byte s2lv, byte s2id, short s2co, byte s3lv, byte s3id, short s3co, byte s4lv, byte s4id, short s4co,
             byte s5lv, byte s5id, short s5co, byte s6lv, byte s6id, short s6co, byte gs,
             byte b70, byte b71, byte b72, short lib, short por, short ser, byte b79, 
@@ -260,7 +260,7 @@ public class CharacterData {
 
         skillAces = sa;
 
-        enemyAI = ai;
+        EXPmodifier = xp;
 
         parts = par;
 
@@ -355,7 +355,7 @@ public class CharacterData {
         data[38] = (byte) ( skillAces >> 8 & 0xff );
         data[39] = (byte) ( skillAces & 0xff );
         
-        data[40] = enemyAI;
+        data[40] = EXPmodifier;
         
         data[41] = parts;  
         
@@ -415,7 +415,7 @@ public class CharacterData {
         
         line += String.valueOf(series) + "\t";
         line += String.valueOf(ally) + "\t";
-        line += String.valueOf(enemyAI & 0xff) + "\t"; 
+        line += String.valueOf(EXPmodifier & 0xff) + "\t"; 
         line += String.valueOf(personality) + "\t";
         line += String.valueOf(libraryID) + "\t"; 
         line += String.valueOf(portrait) + "\t"; 
@@ -600,7 +600,7 @@ public class CharacterData {
         
         series = Short.parseShort(values[offset]); offset++;
         ally = (byte) ( Short.parseShort(values[offset]) & 0xff ); offset++;
-        enemyAI = (byte) ( Short.parseShort(values[offset]) & 0xff ); offset++;
+        EXPmodifier = (byte) ( Short.parseShort(values[offset]) & 0xff ); offset++;
         personality = (byte) ( Short.parseShort(values[offset]) & 0xff ); offset++;
         libraryID = Short.parseShort(values[offset]); offset++;
         portrait = Short.parseShort(values[offset]); offset++;

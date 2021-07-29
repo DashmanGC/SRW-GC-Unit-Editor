@@ -1776,9 +1776,9 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="fieldModelID" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="labelAI" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Component id="labelEXPunit" min="-2" pref="62" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="fieldAI" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="fieldEXPunit" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="labelBGM" min="-2" pref="40" max="-2" attributes="0"/>
@@ -1809,8 +1809,8 @@
                               <Component id="fieldLibID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="labelModelID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="fieldModelID" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelAI" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="fieldAI" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelEXPunit" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="fieldEXPunit" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1823,18 +1823,18 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="labelAI">
+                <Component class="javax.swing.JLabel" name="labelEXPunit">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Enemy AI (?)"/>
+                    <Property name="text" type="java.lang.String" value="EXP Modifier"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="fieldAI">
+                <Component class="javax.swing.JTextField" name="fieldEXPunit">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="11"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fieldAIKeyReleased"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fieldAIKeyTyped"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fieldEXPunitKeyReleased"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fieldEXPunitKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelLibID">
@@ -2327,9 +2327,9 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="comboAlly" min="-2" pref="67" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="labelEnemyAI" min="-2" pref="66" max="-2" attributes="0"/>
+                              <Component id="labelEXPchar" min="-2" pref="66" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="fieldEnemyAI" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="fieldEXPchar" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="labelPortrait" min="-2" pref="116" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2424,8 +2424,8 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                              <Component id="labelEnemyAI" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="fieldEnemyAI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelEXPchar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="fieldEXPchar" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="labelAlly" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2598,18 +2598,18 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="labelEnemyAI">
+            <Component class="javax.swing.JLabel" name="labelEXPchar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enemy AI (?):"/>
+                <Property name="text" type="java.lang.String" value="EXP Modifier:"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="fieldEnemyAI">
+            <Component class="javax.swing.JTextField" name="fieldEXPchar">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="11"/>
               </Properties>
               <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fieldEnemyAIKeyReleased"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fieldEXPcharKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelPortrait">

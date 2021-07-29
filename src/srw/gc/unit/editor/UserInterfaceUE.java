@@ -105,7 +105,7 @@ public class UserInterfaceUE extends javax.swing.JFrame {
             + "\tFamily - Gundam\tFamily - L-Gaim\tFamily - Layzner\tFamily - Dragonar\tFamily - Mazinger\tFamily - Getter"
             + "\tFamily - RaijinOh\tFamily - Eiji\tFamily - Kaine\tFamily - Tapp\tFamily - Light\tFamily - Kouji"
             + "\tFamily - Lilith\tFamily - Unused#1\tFamily - Unused#2\tFamily - Unused#3\tSell item\t*Library ID\t*3D model"
-            + "\tEnemy AI (?)\tBGM\tUpgrades Weapons\tInflation Weapons\t*Byte #37\t*Byte #38\t*Byte #39\t*Byte #56"
+            + "\tEXP Modifier\tBGM\tUpgrades Weapons\tInflation Weapons\t*Byte #37\t*Byte #38\t*Byte #39\t*Byte #56"
             + "\t*Byte #60\t*Byte #61\t*Byte #62\t*Byte #69\t*Byte #71\t*Byte #72\n";
     
     String csv_header_weapons = "Unit ID\tUnit name\tWeapon ID\tWeapon name\t*Animation ID\tBGM override\tBase power"
@@ -117,7 +117,7 @@ public class UserInterfaceUE extends javax.swing.JFrame {
             + "\tProp. - Combo\tProp. - Event lock\tProp. - Can't hit size S\tProp. - Hits buildings\t*Prop. - Unknown"
             + "\t*Byte 01\t*Byte 10\t*Byte 21\t*Byte 23\t*Byte 24\n";
     
-    String csv_header_characters = "Character ID\tCharacter Name\tRobot series\tAlly / Enemy\tEnemy AI (?)\tPersonality"
+    String csv_header_characters = "Character ID\tCharacter Name\tRobot series\tAlly / Enemy\tEXP Modifier\tPersonality"
             + "\t*Library ID\t*Portrait / Battle lines ID\tSkill parts\tSkill Aces\tStat growth schema\tBase Melee\tBase Ranged"
             + "\tBase Defense\tBase Skill\tBase Accuracy\tBase Evasion\tLearn NT Lv1\tLearn NT Lv2\tLearn NT Lv3\tLearn NT Lv4"
             + "\tLearn NT Lv5\tLearn NT Lv6\tLearn NT Lv7\tLearn NT Lv8\tLearn NT Lv9\tLearn Potential Lv1\tLearn Potential Lv2"
@@ -290,8 +290,8 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         checkFamUnit15 = new javax.swing.JCheckBox();
         checkFamUnit16 = new javax.swing.JCheckBox();
         panelMisc = new javax.swing.JPanel();
-        labelAI = new javax.swing.JLabel();
-        fieldAI = new javax.swing.JTextField();
+        labelEXPunit = new javax.swing.JLabel();
+        fieldEXPunit = new javax.swing.JTextField();
         labelLibID = new javax.swing.JLabel();
         fieldLibID = new javax.swing.JTextField();
         labelModelID = new javax.swing.JLabel();
@@ -344,8 +344,8 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         comboAlly = new javax.swing.JComboBox<>();
         labelSkillParts = new javax.swing.JLabel();
         comboSkillParts = new javax.swing.JComboBox<>();
-        labelEnemyAI = new javax.swing.JLabel();
-        fieldEnemyAI = new javax.swing.JTextField();
+        labelEXPchar = new javax.swing.JLabel();
+        fieldEXPchar = new javax.swing.JTextField();
         labelPortrait = new javax.swing.JLabel();
         fieldPortrait = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
@@ -1287,15 +1287,15 @@ public class UserInterfaceUE extends javax.swing.JFrame {
 
         panelMisc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Miscellaneous", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(5, 102, 255))); // NOI18N
 
-        labelAI.setText("Enemy AI (?)");
+        labelEXPunit.setText("EXP Modifier");
 
-        fieldAI.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
-        fieldAI.addKeyListener(new java.awt.event.KeyAdapter() {
+        fieldEXPunit.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        fieldEXPunit.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                fieldAIKeyReleased(evt);
+                fieldEXPunitKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                fieldAIKeyTyped(evt);
+                fieldEXPunitKeyTyped(evt);
             }
         });
 
@@ -1343,9 +1343,9 @@ public class UserInterfaceUE extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fieldModelID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(labelAI, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelEXPunit, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fieldAI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fieldEXPunit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelMiscLayout.createSequentialGroup()
                         .addComponent(labelBGM, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1369,8 +1369,8 @@ public class UserInterfaceUE extends javax.swing.JFrame {
                     .addComponent(fieldLibID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelModelID)
                     .addComponent(fieldModelID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelAI)
-                    .addComponent(fieldAI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelEXPunit)
+                    .addComponent(fieldEXPunit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelMiscLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelBGM)
@@ -1780,13 +1780,13 @@ public class UserInterfaceUE extends javax.swing.JFrame {
 
         comboSkillParts.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4" }));
 
-        labelEnemyAI.setText("Enemy AI (?):");
-        labelEnemyAI.setToolTipText("");
+        labelEXPchar.setText("EXP Modifier:");
+        labelEXPchar.setToolTipText("");
 
-        fieldEnemyAI.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
-        fieldEnemyAI.addKeyListener(new java.awt.event.KeyAdapter() {
+        fieldEXPchar.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        fieldEXPchar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                fieldEnemyAIKeyReleased(evt);
+                fieldEXPcharKeyReleased(evt);
             }
         });
 
@@ -3072,9 +3072,9 @@ public class UserInterfaceUE extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(comboAlly, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(labelEnemyAI, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelEXPchar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(fieldEnemyAI, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldEXPchar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelPortrait, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -3152,8 +3152,8 @@ public class UserInterfaceUE extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(tabCharactersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(tabCharactersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(labelEnemyAI)
-                                        .addComponent(fieldEnemyAI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(labelEXPchar)
+                                        .addComponent(fieldEXPchar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(tabCharactersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(labelAlly)
                                         .addComponent(comboAlly, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3445,9 +3445,9 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         filterNonNumber(evt);
     }//GEN-LAST:event_fieldRepairKeyTyped
 
-    private void fieldAIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldAIKeyTyped
+    private void fieldEXPunitKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldEXPunitKeyTyped
         filterNonNumber(evt);
-    }//GEN-LAST:event_fieldAIKeyTyped
+    }//GEN-LAST:event_fieldEXPunitKeyTyped
 
     private void comboPersonalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPersonalityActionPerformed
         setPersonalityInfo();
@@ -3622,9 +3622,9 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         capField( (JTextField) evt.getComponent(), max_short );
     }//GEN-LAST:event_fieldPortraitKeyReleased
 
-    private void fieldEnemyAIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldEnemyAIKeyReleased
+    private void fieldEXPcharKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldEXPcharKeyReleased
         capField( (JTextField) evt.getComponent(), max_byte );
-    }//GEN-LAST:event_fieldEnemyAIKeyReleased
+    }//GEN-LAST:event_fieldEXPcharKeyReleased
 
     private void fieldNTlv1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldNTlv1KeyReleased
         capField( (JTextField) evt.getComponent(), max_byte );
@@ -3758,9 +3758,9 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         capField( (JTextField) evt.getComponent(), max_byte );
     }//GEN-LAST:event_fieldEssentialKeyReleased
 
-    private void fieldAIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldAIKeyReleased
+    private void fieldEXPunitKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldEXPunitKeyReleased
         capField( (JTextField) evt.getComponent(), max_byte );
-    }//GEN-LAST:event_fieldAIKeyReleased
+    }//GEN-LAST:event_fieldEXPunitKeyReleased
 
     
     /*********************************************************/
@@ -4306,7 +4306,7 @@ public class UserInterfaceUE extends javax.swing.JFrame {
             units[i].terrainType = block[offset];
             offset++;
             
-            units[i].enemyAI = block[offset];
+            units[i].EXPmodifier = block[offset];
             offset++;
             
             units[i].pilotFamily = subBlock( block, offset, 2 );
@@ -4572,7 +4572,7 @@ public class UserInterfaceUE extends javax.swing.JFrame {
             characters[i].skillAces = (short) parse2bytes( subBlock( block, offset, 2 ) );
             offset += 2;
             
-            characters[i].enemyAI = block[offset];
+            characters[i].EXPmodifier = block[offset];
             offset++;
             
             characters[i].parts = block[offset];
@@ -4731,7 +4731,7 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         setComboMove( units[current_unit].movement );
         setTerrainType( units[current_unit].terrainType );
         
-        setAI( units[current_unit].enemyAI );
+        setEXPunit( units[current_unit].EXPmodifier );
         
         setFamUnit( units[current_unit].pilotFamily );
         
@@ -4881,7 +4881,7 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         
         setComboSkillAces(characters[current_char].skillAces);
         
-        setEnemyAI(characters[current_char].enemyAI);
+        setEXPchar(characters[current_char].EXPmodifier);
         
         setComboSkillParts(characters[current_char].parts);
         
@@ -4959,7 +4959,7 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         units[current_unit].movement = (byte) getComboMove();
         units[current_unit].terrainType = getTerrainType();
         
-        units[current_unit].enemyAI = (byte) getAI();
+        units[current_unit].EXPmodifier = (byte) getEXPunit();
         
         units[current_unit].pilotFamily = getFamUnit();
         
@@ -5091,7 +5091,7 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         
         characters[current_char].skillAces = (short) getComboSkillAces();
         
-        characters[current_char].enemyAI = (byte) getEnemyAI();
+        characters[current_char].EXPmodifier = (byte) getEXPchar();
         
         characters[current_char].parts = (byte) getComboSkillParts();
         
@@ -6165,12 +6165,12 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         return Integer.valueOf( fieldArmorBase.getText() );
     }
     
-    private void setAI(int value){
-        fieldAI.setText("" + (value & 0xff));   // Avoid negative values
+    private void setEXPunit(int value){
+        fieldEXPunit.setText("" + (value & 0xff));   // Avoid negative values
     }
     
-    private int getAI(){
-        return Integer.valueOf( fieldAI.getText() );
+    private int getEXPunit(){
+        return Integer.valueOf( fieldEXPunit.getText() );
     }
     
     private void setInflation(int value){
@@ -6313,12 +6313,12 @@ public class UserInterfaceUE extends javax.swing.JFrame {
         return Integer.valueOf( fieldPortrait.getText() );
     }
     
-    private void setEnemyAI(int value){
-        fieldEnemyAI.setText("" + (value & 0xff));  // Avoid negative values
+    private void setEXPchar(int value){
+        fieldEXPchar.setText("" + (value & 0xff));  // Avoid negative values
     }
     
-    private int getEnemyAI(){
-        return Integer.valueOf( fieldEnemyAI.getText() );
+    private int getEXPchar(){
+        return Integer.valueOf( fieldEXPchar.getText() );
     }
     
     private void setMeleeBase(int value){
@@ -8906,7 +8906,6 @@ public class UserInterfaceUE extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboUpgradesMob;
     private javax.swing.JComboBox<String> comboUpgradesWeapons;
     private javax.swing.JComboBox<String> comboWater;
-    private javax.swing.JTextField fieldAI;
     private javax.swing.JTextField fieldAccuracyBase;
     private javax.swing.JTextField fieldAccuracyMax;
     private javax.swing.JTextField fieldArmorBase;
@@ -8946,7 +8945,8 @@ public class UserInterfaceUE extends javax.swing.JFrame {
     private javax.swing.JTextField fieldCostCommand6;
     private javax.swing.JTextField fieldDefenseBase;
     private javax.swing.JTextField fieldDefenseMax;
-    private javax.swing.JTextField fieldEnemyAI;
+    private javax.swing.JTextField fieldEXPchar;
+    private javax.swing.JTextField fieldEXPunit;
     private javax.swing.JTextField fieldEnergyBase;
     private javax.swing.JTextField fieldEnergyMax;
     private javax.swing.JTextField fieldEssential;
@@ -9026,7 +9026,6 @@ public class UserInterfaceUE extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
-    private javax.swing.JLabel labelAI;
     private javax.swing.JLabel labelAccuracy;
     private javax.swing.JLabel labelAccuracyRank;
     private javax.swing.JLabel labelAir;
@@ -9068,7 +9067,8 @@ public class UserInterfaceUE extends javax.swing.JFrame {
     private javax.swing.JLabel labelDamage;
     private javax.swing.JLabel labelDefense;
     private javax.swing.JLabel labelDefenseRank;
-    private javax.swing.JLabel labelEnemyAI;
+    private javax.swing.JLabel labelEXPchar;
+    private javax.swing.JLabel labelEXPunit;
     private javax.swing.JLabel labelEnemyKill;
     private javax.swing.JLabel labelEnergy;
     private javax.swing.JLabel labelEssential;

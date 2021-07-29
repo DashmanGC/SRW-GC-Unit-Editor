@@ -56,7 +56,7 @@ public class UnitData {
     byte movement;
     byte terrainType;
     
-    byte enemyAI;   // still not sure about this one
+    byte EXPmodifier;   // multiplies EXP gained by fighting this character
     
     byte[] pilotFamily; // 2 bytes (could use a short)
     
@@ -131,7 +131,7 @@ public class UnitData {
         movement = 0;
         terrainType = 0;
 
-        enemyAI = 0;
+        EXPmodifier = 0;
 
         pilotFamily = new byte[2];
 
@@ -206,7 +206,7 @@ public class UnitData {
         movement = mov;
         terrainType = tt;
 
-        enemyAI = ai;
+        EXPmodifier = ai;
 
         pilotFamily = pf;
 
@@ -299,7 +299,7 @@ public class UnitData {
         data[41] = movement;
         data[42] = terrainType;
         
-        data[43] = enemyAI;
+        data[43] = EXPmodifier;
         
         data[44] = pilotFamily[0];
         data[45] = pilotFamily[1];
@@ -534,7 +534,7 @@ public class UnitData {
         line += String.valueOf(item) + "\t";
         line += String.valueOf(libraryID) + "\t";
         line += String.valueOf(model3D) + "\t";
-        line += String.valueOf(enemyAI & 0xff) + "\t";
+        line += String.valueOf(EXPmodifier & 0xff) + "\t";
         line += String.valueOf(bgm) + "\t";
         
         line += String.valueOf(upgradesWeapons) + "\t";
@@ -753,7 +753,7 @@ public class UnitData {
         item = Short.parseShort(values[offset]); offset++;
         libraryID = Short.parseShort(values[offset]); offset++;
         model3D = Short.parseShort(values[offset]); offset++;
-        enemyAI = (byte) ( Short.parseShort(values[offset]) & 0xff ); offset++;
+        EXPmodifier = (byte) ( Short.parseShort(values[offset]) & 0xff ); offset++;
         bgm = (byte) ( Short.parseShort(values[offset]) & 0xff ); offset++;
         
         upgradesWeapons = (byte) ( Short.parseShort(values[offset]) & 0xff ); offset++;
